@@ -1,0 +1,67 @@
+### Oro Privacy Policy
+
+Last Updated: August 11, 2025
+
+Oro ("the App") respects your privacy and the security of your data. This Privacy Policy explains how we collect, use, store, and protect information. By using or continuing to use the App, you acknowledge that you have read and agree to this Policy.
+
+### 1. Information We Collect
+
+- **No Personally Identifiable Information (PII)**: The App does not collect, store, or transmit any information that can identify you personally.
+- **Local-only access for core features** (processed on your device, not uploaded):
+  - **Location data**: Used to calculate and display compass heading, altitude-related information, and sunrise/sunset, golden hour, and blue hour times.
+  - **Device sensor data**: Such as barometer, accelerometer, and magnetometer, used solely for compass, altitude, and pressure features.
+
+All the above data is processed locally on your device and is not uploaded to any server.
+
+### 2. How We Use Information
+
+Locally processed data is used only to:
+- **Calculate and display your current heading (compass)**
+- **Calculate altitude and pressure values**
+- **Calculate sunrise, sunset, golden hour, and blue hour times**
+
+We do not use your data for advertising, analytics, profiling, or any purposes beyond core functionality.
+
+### 3. Storage and Transmission
+
+- **No cloud upload**: The App does not upload your location or sensor data to the cloud or to any third party.
+- **Local processing only**: All processing is done on your device.
+- **App preferences**: Items such as coordinate format, app language, and haptic/vibration toggle are stored locally on your device (UserDefaults) and do not contain PII.
+
+### 4. Third-Party Services
+
+- **No data-collecting SDKs**: The App does not integrate any third-party SDKs or analytics tools that collect user data.
+- **Local-computation libraries**: The App uses SunKit for astronomical/time calculations performed locally. It does not perform network requests nor collect or transmit data.
+
+### 5. Children’s Privacy
+
+The App can be used by users of all ages. It does not offer features specifically targeting children and does not collect children’s personal information. If you are a parent or guardian and believe we have inadvertently collected information from a minor, please contact us and we will assist.
+
+### 6. Permissions
+
+To enable core features, the App may request the following system permissions:
+- **Location**: For heading, altitude calculations, and sunrise/sunset times.
+- **Sensors** (Motion & Fitness/Device Motion, Barometer, etc.): For compass, altitude, and pressure features, and to optimize update frequency to improve experience and battery efficiency.
+
+You may decline these permissions. Certain features may not function without them, but you can still use other parts of the App. You can change or revoke permissions at any time in iOS Settings.
+
+### 7. How We Protect Your Information
+
+- **Data minimization**: We process only what is necessary for functionality, locally on your device. We do not operate accounts or store your data remotely.
+- **No tracking**: We do not conduct cross-app or cross-site tracking. We do not use advertising identifiers (IDFA), and we do not show ads.
+
+### 8. Contact Us
+
+If you have any questions, comments, or requests regarding this Privacy Policy or our data practices, please contact us:
+- **Email**: he0564@gmail.com
+- **Support Site**: [GitHub - Oro Feedback & Support](https://github.com/ZionHeZY/Oro-Feedback)
+
+### 9. Legal Notice and Compliance
+
+We are committed to complying with applicable privacy laws and regulations, including, where applicable, the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). We will continue to improve our data protection measures.
+
+### 10. Changes to This Policy
+
+We may update this Policy from time to time. If there are material changes, we will provide notice in the App release notes or in-app. Where required, we will obtain your consent again for changes that affect permissions or data use.
+
+
