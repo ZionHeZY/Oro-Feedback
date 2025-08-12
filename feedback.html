@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oro 反馈</title>
+    <meta name="description" content="提交 Oro 使用反馈、问题或功能建议。" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title"><a href="./index.html">Oro</a></h1>
+        <nav class="nav">
+          <a href="./privacy-policy-zh.html">隐私政策</a>
+          <a href="./terms-zh.html">用户协议</a>
+          <a class="active" href="./feedback.html">反馈</a>
+          <a class="btn" href="https://apps.apple.com/us/app/oro/id6744850883" target="_blank" rel="noopener">下载 App</a>
+          <button id="toggle-theme" class="btn-ghost" aria-label="切换主题">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container prose">
+      <article>
+        <h2>提交反馈</h2>
+        <p>欢迎反馈使用中的问题或建议。您可以通过以下方式联系我们：</p>
+        <ul>
+          <li>邮箱：<a href="mailto:he0564@gmail.com">he0564@gmail.com</a></li>
+          <li>GitHub Issues：<a href="https://github.com/ZionHeZY/Oro-Feedback/issues" target="_blank" rel="noopener">提交新 Issue</a></li>
+        </ul>
+
+        <h3>在线表单</h3>
+        <p>也可以直接通过本页表单提交，我们会将内容发送到您的默认邮件客户端，您可在发送前查看与补充。</p>
+
+        <form id="feedback-form">
+          <div class="card" style="padding:16px;">
+            <label>
+              标题
+              <input type="text" id="title" name="title" placeholder="简要描述问题或建议" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--fg);"/>
+            </label>
+            <div style="height:12px"></div>
+            <label>
+              详细描述
+              <textarea id="body" name="body" rows="8" placeholder="请描述发生了什么、预期行为、设备与系统版本等信息" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--fg);"></textarea>
+            </label>
+            <div style="height:12px"></div>
+            <button type="submit" class="btn">生成邮件</button>
+            <a class="btn secondary" href="https://github.com/ZionHeZY/Oro-Feedback/issues/new/choose" target="_blank" rel="noopener">在 GitHub 提交</a>
+          </div>
+        </form>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <a class="back-link" href="./index.html">← 返回首页</a>
+        <p>© <span id="year"></span> Oro</p>
+      </div>
+    </footer>
+
+    <script>
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.dataset.theme = saved;
+      } else {
+        document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light';
+      }
+      document.getElementById('toggle-theme')?.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+
+      const form = document.getElementById('feedback-form');
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const subject = document.getElementById('title').value.trim();
+        const body = document.getElementById('body').value.trim();
+        const mailto = `mailto:he0564@gmail.com?subject=${encodeURIComponent('[Oro 反馈] ' + subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      });
+    </script>
+  </body>
+  </html>
+
+

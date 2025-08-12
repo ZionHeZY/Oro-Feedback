@@ -1,65 +1,63 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Oro - 支持与下载</title>
-    <meta name="description" content="Oro 应用支持页：下载链接、隐私政策、用户协议、反馈与效果图。" />
+    <title>Oro - Support & Download</title>
+    <meta name="description" content="Oro App support: download link, privacy policy, terms of use, feedback, and gallery." />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container">
-        <h1 class="site-title"><a href="./index.html">Oro</a></h1>
+        <h1 class="site-title"><a href="./index-en.html">Oro</a></h1>
         <nav class="nav">
-          <a href="./privacy-policy-zh.html">隐私政策</a>
-          <a href="./terms-zh.html">用户协议</a>
-          <a href="./feedback.html">反馈</a>
-          <a class="btn" href="https://apps.apple.com/us/app/oro/id6744850883" target="_blank" rel="noopener">下载 App</a>
-          <a href="./index-en.html" lang="en">English</a>
           <a href="./privacy-policy-en.html" lang="en">Privacy Policy</a>
-          <button id="toggle-theme" class="btn-ghost" aria-label="切换主题">🌓</button>
+          <a href="./terms-en.html" lang="en">Terms</a>
+          <a href="./feedback.html">Feedback</a>
+          <a class="btn" href="https://apps.apple.com/us/app/oro/id6744850883" target="_blank" rel="noopener">Get the App</a>
+          <a href="./index.html">中文</a>
+          <button id="toggle-theme" class="btn-ghost" aria-label="Toggle theme">🌓</button>
         </nav>
       </div>
     </header>
 
     <main class="container">
       <section class="hero">
-        <h2>支持与隐私</h2>
-        <p>Oro 是一款极简的方位与环境信息工具。我们注重隐私，不收集可识别个人身份的信息（PII），仅在设备本地处理核心功能数据。</p>
+        <h2>Support & Privacy</h2>
+        <p>Oro is a minimal compass and environmental info tool. We respect privacy: no PII is collected. Data for core features is processed locally on your device.</p>
         <div class="actions">
-          <a class="btn" href="https://apps.apple.com/us/app/oro/id6744850883" target="_blank" rel="noopener">前往 App Store 下载</a>
-          <a class="btn secondary" href="./terms-zh.html">查看用户协议</a>
-          <a class="btn secondary" href="./privacy-policy-zh.html">查看隐私政策（中文）</a>
-          <a class="btn secondary" href="./privacy-policy-en.html" lang="en">Privacy Policy (English)</a>
+          <a class="btn" href="https://apps.apple.com/us/app/oro/id6744850883" target="_blank" rel="noopener">Open in App Store</a>
+          <a class="btn secondary" href="./terms-en.html">View Terms</a>
+          <a class="btn secondary" href="./privacy-policy-en.html" lang="en">View Privacy Policy</a>
         </div>
       </section>
 
       <section class="grid">
         <article class="card">
-          <h3>本地处理</h3>
-          <p>位置、传感器等数据仅在本地用于罗盘、海拔、日出/日落等功能，不会上云。</p>
+          <h3>Local Processing</h3>
+          <p>Location and sensor data are processed locally for compass, altitude, sunrise/sunset, and more. No cloud upload.</p>
         </article>
         <article class="card">
-          <h3>无追踪</h3>
-          <p>不进行跨应用/跨网站追踪，不使用广告标识符（IDFA），不展示广告。</p>
+          <h3>No Tracking</h3>
+          <p>No cross-app or cross-site tracking. No IDFA, no ads.</p>
         </article>
         <article class="card">
-          <h3>透明合规</h3>
-          <p>承诺遵守适用法律法规（如 GDPR / CCPA），持续改进数据保护措施。</p>
+          <h3>Transparent & Compliant</h3>
+          <p>Committed to applicable regulations (e.g., GDPR / CCPA) and continuous privacy improvements.</p>
         </article>
       </section>
 
       <section class="gallery-section">
         <div class="container">
-          <h2>应用截图</h2>
+          <h2>App Screenshots</h2>
           <div class="gallery-container">
             <div class="gallery" id="gallery">
-              <img src="./Assests/Oro1.jpg" alt="Oro 应用效果图 1" />
-              <img src="./Assests/Oro2.jpg" alt="Oro 应用效果图 2" />
-              <img src="./Assests/Oro3.jpg" alt="Oro 应用效果图 3" />
-              <img src="./Assests/123.png" alt="Oro 界面示意图 123" />
-              <img src="./Assests/234.png" alt="Oro 界面示意图 234" />
+              <img src="./Assests/Oro1.jpg" alt="Oro Screenshot 1" />
+              <img src="./Assests/Oro2.jpg" alt="Oro Screenshot 2" />
+              <img src="./Assests/Oro3.jpg" alt="Oro Screenshot 3" />
+              <img src="./Assests/123.png" alt="Oro UI sample 123" />
+              <img src="./Assests/234.png" alt="Oro UI sample 234" />
             </div>
             <button class="gallery-nav prev" id="prevBtn">‹</button>
             <button class="gallery-nav next" id="nextBtn">›</button>
@@ -71,17 +69,13 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>
-          © <span id="year"></span> Oro •
-          <a href="https://github.com/ZionHeZY/Oro-Feedback" target="_blank" rel="noopener">GitHub</a>
-        </p>
+        <p>© <span id="year"></span> Oro • <a href="https://github.com/ZionHeZY/Oro-Feedback" target="_blank" rel="noopener">GitHub</a></p>
       </div>
     </footer>
 
     <script>
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
-
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       const saved = localStorage.getItem('theme');
       if (saved) {

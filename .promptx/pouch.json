@@ -1,0 +1,17 @@
+{
+  "currentState": "initialized",
+  "stateHistory": [
+    {
+      "from": "initial",
+      "command": "init",
+      "timestamp": "2025-08-12T12:47:42.858Z",
+      "args": [
+        {
+          "workingDirectory": "/Users/hezy/Github/Oro-Feedback",
+          "ideType": "cursor"
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2025-08-12T12:47:42.868Z"
+}
