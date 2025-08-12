@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oro - 隐私政策 | Privacy Policy</title>
+    <meta name="description" content="Oro 应用隐私政策（中英双语），关于信息收集、使用、存储与保护的说明。" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">Oro</h1>
+        <nav class="nav">
+          <a href="./privacy-policy-zh.html">隐私政策</a>
+          <a href="./privacy-policy-en.html" lang="en">Privacy Policy</a>
+          <button id="toggle-theme" class="btn-ghost" aria-label="切换主题">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h2>隐私与数据保护</h2>
+        <p>我们不收集可识别个人身份的信息（PII），仅在您的设备本地处理用于核心功能的数据。</p>
+        <div class="actions">
+          <a class="btn" href="./privacy-policy-zh.html">查看隐私政策（中文）</a>
+          <a class="btn secondary" href="./privacy-policy-en.html" lang="en">View Privacy Policy (English)</a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>本地处理</h3>
+          <p>位置、传感器等数据仅在本地用于罗盘、海拔、日出/日落等功能，不会上云。</p>
+        </article>
+        <article class="card">
+          <h3>无追踪</h3>
+          <p>不进行跨应用/跨网站追踪，不使用广告标识符（IDFA），不展示广告。</p>
+        </article>
+        <article class="card">
+          <h3>透明合规</h3>
+          <p>承诺遵守适用法律法规（如 GDPR / CCPA），持续改进数据保护措施。</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> Oro •
+          <a href="https://github.com/ZionHeZY/Oro-Feedback" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.dataset.theme = saved;
+      } else {
+        document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light';
+      }
+      document.getElementById('toggle-theme')?.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+    </script>
+  </body>
+  </html>
+
+

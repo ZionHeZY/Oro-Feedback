@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oro Privacy Policy</title>
+    <meta name="description" content="Oro App Privacy Policy (English)." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title"><a href="./index.html">Oro</a></h1>
+        <nav class="nav">
+          <a href="./privacy-policy-zh.html">中文</a>
+          <a class="active" href="./privacy-policy-en.html" lang="en">English</a>
+          <button id="toggle-theme" class="btn-ghost" aria-label="Toggle theme">🌓</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container prose">
+      <article>
+        <h2>Oro Privacy Policy</h2>
+        <p><strong>Last Updated:</strong> August 11, 2025</p>
+
+        <p>Oro ("the App") respects your privacy and the security of your data. This Privacy Policy explains how we collect, use, store, and protect information. By using or continuing to use the App, you acknowledge that you have read and agree to this Policy.</p>
+
+        <h3>1. Information We Collect</h3>
+        <ul>
+          <li><strong>No Personally Identifiable Information (PII)</strong>: The App does not collect, store, or transmit any information that can identify you personally.</li>
+          <li>
+            <strong>Local-only access for core features</strong> (processed on your device, not uploaded):
+            <ul>
+              <li><strong>Location data</strong>: Used to calculate and display compass heading, altitude-related information, and sunrise/sunset, golden hour, and blue hour times.</li>
+              <li><strong>Device sensor data</strong>: Such as barometer, accelerometer, and magnetometer, used solely for compass, altitude, and pressure features.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>All the above data is processed locally on your device and is not uploaded to any server.</p>
+
+        <h3>2. How We Use Information</h3>
+        <p>Locally processed data is used only to:</p>
+        <ul>
+          <li><strong>Calculate and display your current heading (compass)</strong></li>
+          <li><strong>Calculate altitude and pressure values</strong></li>
+          <li><strong>Calculate sunrise, sunset, golden hour, and blue hour times</strong></li>
+        </ul>
+        <p>We do not use your data for advertising, analytics, profiling, or any purposes beyond core functionality.</p>
+
+        <h3>3. Storage and Transmission</h3>
+        <ul>
+          <li><strong>No cloud upload</strong>: The App does not upload your location or sensor data to the cloud or to any third party.</li>
+          <li><strong>Local processing only</strong>: All processing is done on your device.</li>
+          <li><strong>App preferences</strong>: Items such as coordinate format, app language, and haptic/vibration toggle are stored locally on your device (UserDefaults) and do not contain PII.</li>
+        </ul>
+
+        <h3>4. Third-Party Services</h3>
+        <ul>
+          <li><strong>No data-collecting SDKs</strong>: The App does not integrate any third-party SDKs or analytics tools that collect user data.</li>
+          <li><strong>Local-computation libraries</strong>: The App uses SunKit for astronomical/time calculations performed locally. It does not perform network requests nor collect or transmit data.</li>
+        </ul>
+
+        <h3>5. Children’s Privacy</h3>
+        <p>The App can be used by users of all ages. It does not offer features specifically targeting children and does not collect children’s personal information. If you are a parent or guardian and believe we have inadvertently collected information from a minor, please contact us and we will assist.</p>
+
+        <h3>6. Permissions</h3>
+        <p>To enable core features, the App may request the following system permissions:</p>
+        <ul>
+          <li><strong>Location</strong>: For heading, altitude calculations, and sunrise/sunset times.</li>
+          <li><strong>Sensors</strong> (Motion &amp; Fitness/Device Motion, Barometer, etc.): For compass, altitude, and pressure features, and to optimize update frequency to improve experience and battery efficiency.</li>
+        </ul>
+        <p>You may decline these permissions. Certain features may not function without them, but you can still use other parts of the App. You can change or revoke permissions at any time in iOS Settings.</p>
+
+        <h3>7. How We Protect Your Information</h3>
+        <ul>
+          <li><strong>Data minimization</strong>: We process only what is necessary for functionality, locally on your device. We do not operate accounts or store your data remotely.</li>
+          <li><strong>No tracking</strong>: We do not conduct cross-app or cross-site tracking. We do not use advertising identifiers (IDFA), and we do not show ads.</li>
+        </ul>
+
+        <h3>8. Contact Us</h3>
+        <p>If you have any questions, comments, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+        <ul>
+          <li><strong>Email</strong>: <a href="mailto:he0564@gmail.com">he0564@gmail.com</a></li>
+          <li><strong>Support Site</strong>: <a href="https://github.com/ZionHeZY/Oro-Feedback" target="_blank" rel="noopener">GitHub - Oro Feedback &amp; Support</a></li>
+        </ul>
+
+        <h3>9. Legal Notice and Compliance</h3>
+        <p>We are committed to complying with applicable privacy laws and regulations, including, where applicable, the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). We will continue to improve our data protection measures.</p>
+
+        <h3>10. Changes to This Policy</h3>
+        <p>We may update this Policy from time to time. If there are material changes, we will provide notice in the App release notes or in-app. Where required, we will obtain your consent again for changes that affect permissions or data use.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <a class="back-link" href="./index.html">← Back to Home</a>
+        <p>© <span id="year"></span> Oro</p>
+      </div>
+    </footer>
+
+    <script>
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+      const saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.dataset.theme = saved;
+    </script>
+  </body>
+  </html>
+
+
