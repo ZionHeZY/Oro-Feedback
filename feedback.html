@@ -11,7 +11,10 @@
     <header class="site-header">
       <div class="container">
         <h1 class="site-title"><a href="./index.html">Oro</a></h1>
-        <nav class="nav">
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换菜单">
+          <span class="hamburger">☰</span>
+        </button>
+        <nav class="nav" id="nav-menu">
           <a href="./privacy-policy-zh.html">隐私政策</a>
           <a href="./terms-zh.html">用户协议</a>
           <a class="active" href="./feedback.html">反馈</a>
@@ -74,6 +77,34 @@
         document.documentElement.dataset.theme = next;
         localStorage.setItem('theme', next);
       });
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      
+      if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          const isOpen = navMenu.classList.contains('active');
+          mobileMenuToggle.querySelector('.hamburger').textContent = isOpen ? '✕' : '☰';
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.querySelector('.hamburger').textContent = '☰';
+          }
+        });
+        
+        // Close menu when clicking on nav links
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.querySelector('.hamburger').textContent = '☰';
+          });
+        });
+      }
 
       const form = document.getElementById('feedback-form');
       form?.addEventListener('submit', (e) => {

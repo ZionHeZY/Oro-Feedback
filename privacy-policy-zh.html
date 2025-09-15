@@ -11,7 +11,10 @@
     <header class="site-header">
       <div class="container">
         <h1 class="site-title"><a href="./index.html">Oro</a></h1>
-        <nav class="nav">
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="切换菜单">
+          <span class="hamburger">☰</span>
+        </button>
+        <nav class="nav" id="nav-menu">
           <a class="active" href="./privacy-policy-zh.html">中文</a>
           <a href="./privacy-policy-en.html" lang="en">English</a>
           <button id="toggle-theme" class="btn-ghost" aria-label="切换主题">🌓</button>
@@ -115,6 +118,34 @@
         document.documentElement.dataset.theme = next;
         localStorage.setItem('theme', next);
       });
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      
+      if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          const isOpen = navMenu.classList.contains('active');
+          mobileMenuToggle.querySelector('.hamburger').textContent = isOpen ? '✕' : '☰';
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.querySelector('.hamburger').textContent = '☰';
+          }
+        });
+        
+        // Close menu when clicking on nav links
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.querySelector('.hamburger').textContent = '☰';
+          });
+        });
+      }
     </script>
   </body>
   </html>
