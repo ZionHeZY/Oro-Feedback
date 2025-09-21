@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Oro - 支持与下载</title>
     <meta name="description" content="Oro 应用支持页：下载链接、隐私政策、用户协议、反馈与效果图。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -64,8 +67,6 @@
               <img src="./Assests/123.png" alt="Oro 界面示意图 123" />
               <img src="./Assests/234.png" alt="Oro 界面示意图 234" />
             </div>
-            <button class="gallery-nav prev" id="prevBtn">‹</button>
-            <button class="gallery-nav next" id="nextBtn">›</button>
           </div>
           <div class="gallery-dots" id="galleryDots"></div>
         </div>
@@ -127,82 +128,36 @@
         });
       }
 
-      // Gallery carousel
+      // Gallery grid - 简化的图片展示
       const gallery = document.getElementById('gallery');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
       const dotsContainer = document.getElementById('galleryDots');
       
-      if (gallery && prevBtn && nextBtn && dotsContainer) {
+      if (gallery && dotsContainer) {
         const images = gallery.querySelectorAll('img');
-        let currentIndex = 0;
         
-        // Create dots
+        // Create dots for visual indication
         images.forEach((_, index) => {
           const dot = document.createElement('button');
           dot.className = `gallery-dot ${index === 0 ? 'active' : ''}`;
-          dot.addEventListener('click', () => goToSlide(index));
+          dot.setAttribute('aria-label', `查看图片 ${index + 1}`);
           dotsContainer.appendChild(dot);
         });
         
-        const dots = dotsContainer.querySelectorAll('.gallery-dot');
-        
-        function updateGallery() {
-          const offset = -currentIndex * 100;
-          gallery.style.transform = `translateX(${offset}%)`;
-          
-          dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
+        // Add click handlers for images
+        images.forEach((img, index) => {
+          img.addEventListener('click', () => {
+            // Update active dot
+            const dots = dotsContainer.querySelectorAll('.gallery-dot');
+            dots.forEach((dot, dotIndex) => {
+              dot.classList.toggle('active', dotIndex === index);
+            });
+            
+            // Optional: Add lightbox or full-screen view here
+            console.log(`Clicked image ${index + 1}`);
           });
-        }
-        
-        function goToSlide(index) {
-          currentIndex = index;
-          updateGallery();
-        }
-        
-        function nextSlide() {
-          currentIndex = (currentIndex + 1) % images.length;
-          updateGallery();
-        }
-        
-        function prevSlide() {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          updateGallery();
-        }
-        
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-        
-        // Auto-play
-        setInterval(nextSlide, 4000);
-        
-        // Touch/swipe support
-        let startX = 0;
-        let isDragging = false;
-        
-        gallery.addEventListener('touchstart', (e) => {
-          startX = e.touches[0].clientX;
-          isDragging = true;
-        });
-        
-        gallery.addEventListener('touchend', (e) => {
-          if (!isDragging) return;
-          const endX = e.changedTouches[0].clientX;
-          const diff = startX - endX;
-          
-          if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-              nextSlide();
-            } else {
-              prevSlide();
-            }
-          }
-          isDragging = false;
         });
       }
     </script>
   </body>
   </html>
-
 
